@@ -47,3 +47,10 @@ if prompt := st.chat_input("Ask me anything from NCERT or State syllabus..."):
             st.markdown(reply)
 
     st.session_state.messages.append({"role": "assistant", "content": reply})
+import os
+from groq import Groq
+
+# Set API key here (not recommended for production)
+os.environ["GROQ_API_KEY"] = "your_api_key_here"
+
+client = Groq(api_key=os.environ["GROQ_API_KEY"])
